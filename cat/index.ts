@@ -1,0 +1,23 @@
+function setup() {
+    createCanvas(1000, 1000,)
+    background("skyblue")
+    fill("lightgrey")
+    circle(300, 200, 200,)
+    triangle(220, 80, 240, 110, 210, 140)
+    triangle(380, 80, 360, 110, 390, 140)
+    fill("black")
+    circle(260, 180, 20)
+    circle(330, 180, 20)
+    fill("pink")
+    triangle(295, 210, 280, 200, 310, 200)
+
+    line(295, 225, 295, 210)
+    line(295, 225, 280, 235)
+    line(295, 225, 310, 235)
+    line(345, 225, 310, 235)
+    line(245, 225, 280, 235)
+    line(345, 220, 310, 220)
+    line(345, 210, 310, 215)
+    line(245, 220, 280, 220)
+    line(245, 210, 280, 215)
+}
