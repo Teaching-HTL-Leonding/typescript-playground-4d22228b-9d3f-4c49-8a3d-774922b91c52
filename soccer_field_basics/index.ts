@@ -33,7 +33,7 @@ function setup() {
     translate(MARGIN, MARGIN);
 
     // TODO: Draw the soccer field as close as possible to a real soccer field.
-    // <<< ADD YOUR CODE HERE
+    // <<< ADD YOUR CODE HERE 
 
     const MIDDLELINE = SOCCERFIELDWIDTH / 2
     
@@ -59,7 +59,4 @@ function setup() {
     arc(0, 70, 3, 3, -90, 0)
     arc(100, 70, 3, 3, -180, -90)
     arc(100, 0, 3, 3, 90, -180)
-
-
-
 }
