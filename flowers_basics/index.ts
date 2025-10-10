@@ -25,8 +25,8 @@ function setup() {
   circle(700, 200, 65)
 
   fill("lightgreen")
-  circle(300 + 15.5, 160, 70)
-  circle(350, 207.5, 70)
+  circle(300 + 15.5, 200 - 47.5, 70)
+  circle(350, 200, 70)
   circle(300 + 15.5, 247.5, 70)
   circle(300 - 44, 200 - 31.9, 70)
   circle(300 - 44, 200 + 31.9, 70)
