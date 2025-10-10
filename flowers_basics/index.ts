@@ -1,4 +1,3 @@
-const BLUMEEINFACHDURCHMESSER = 80
 const BLUMESCHWERDURCHMESSER = 70
 const KREISX = 300
 
@@ -17,10 +16,10 @@ function setup() {
 
   fill("lightgreen")
   strokeWeight(1)
-  circle(750, 200, BLUMEEINFACHDURCHMESSER)
-  circle(700, 250, BLUMEEINFACHDURCHMESSER)
-  circle(650, 200, BLUMEEINFACHDURCHMESSER)
-  circle(700, 150, BLUMEEINFACHDURCHMESSER)
+  circle(750, 200, 80)
+  circle(700, 250, 80)
+  circle(650, 200, 80)
+  circle(700, 150, 80)
 
   fill("yellow")
   noStroke()
