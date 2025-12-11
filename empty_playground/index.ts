@@ -1,26 +1,20 @@
 function setup() {
+
     createCanvas(500, 500)
-    background("black")
-    stroke("red")
-    strokeWeight(3)
-    noFill()
+    background("red")
+
+    for (let i = 1; i < 10; i += 2) {
+        fill("black")
+        rect(50 * i, 50, 40, 40)
+    }
+
+    let j = 1
+
+    while(j < 10){
+        fill("black")
+        rect(50 * j, 200, 40, 40)
+        j += 2
+    }
 }
 
-let lastClickX: number = 0
-let lastClickY: number = 0
-
-function mouseClicked() {
-    let a = mouseY - lastClickY
-    let b = mouseX - lastClickX
-    let c = sqrt(a * a + b * b)
-    let diameter = 2 * c
-    line(mouseX, mouseY, lastClickX,  mouseY)
-    line(mouseX, mouseY , lastClickX, lastClickY)
-    line(lastClickX, lastClickY, lastClickX , mouseY )
-    arc(lastClickX, mouseY, 40, 40, 90, 90,)
-    lastClickX = mouseX
-    lastClickY = mouseY
-    circle(mouseX, mouseY, diameter)
-    
-}
 
