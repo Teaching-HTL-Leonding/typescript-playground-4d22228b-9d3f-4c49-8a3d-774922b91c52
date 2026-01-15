@@ -1,28 +1,33 @@
+let rotation : number[] = []
+let centerX : number[] = []
+let centerY : number[] = []
+
 function setup() {
-
     createCanvas(500, 500)
-    background("white")
-    const centerY: number[] = [161, 180, 210, 250,]
-    const centerX: number[] = [161, 180, 210, 250,]
-    const Durchmesser: number[] = [20, 40, 60, 80, 100]
-
-    console.log("vor push", Durchmesser)
-    centerX.push(300)
-    centerY.push(300)
-    console.log("nach push", Durchmesser)
-
-    centerX.splice(0, 3)
-    centerY.splice(0, 3)
-    Durchmesser.splice(0, 3)
-
-    fill("red")
-    noStroke()
-    for (let i = 0; i < centerX.length; i++) {
-        circle(centerX[i], centerY[i], Durchmesser[i])
-    }
-
+    stroke("black")
+    strokeWeight(2)
+    noFill()
+    angleMode(DEGREES)
 
 }
 
 function draw() {
+    background(255, 255, 255, 10)
+
+    for(let i = 0; i < centerX.length; i++){
+    push()
+    translate(centerX[i], centerY[i]);
+    rotate(rotation[i])
+    line(-50, 0, 50, 0)
+    pop()
+    rotation[i] += 2
+    }
+
+}
+
+function mouseClicked() {
+    centerX.push(mouseX)
+    centerY.push(mouseY)
+    rotation.push(0)
+
 }
