@@ -23,19 +23,21 @@ function draw() {
 
     fill('yellow');
     stroke('gold');
-    push()
-    for (let i = 0; i < width; i++) {
-        translate(0, circleY[i])
-        circle(circleX[i], circleY[i], DIAM);
-
-        }
-
-    pop()
+    for (let i = 0; i < circleX.length; i++) {
+        push()
+        circle(circleX[i], circleY[i], DIAM)
+        circleX[i] += SPEED * direction[i];
+    
+    
+        pop()
+    }
     }
 
 function mouseClicked() {
 
-    circleX.push(mouseX)
+    circleX.push(10)
     circleY.push(mouseY)
+    direction.push(1)
+
 
 }
