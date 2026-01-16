@@ -20,7 +20,7 @@ function draw() {
     fill('yellow');
     stroke('gold');
 
-    circle(10, mouseY, DIAM)
+    circle(RADI, mouseY, DIAM)
     for (let i = 0; i < circleX.length; i++) {
         push()
         circle(circleX[i], circleY[i], DIAM)
@@ -34,10 +34,12 @@ function draw() {
 }
 
 function mouseClicked() {
+    if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) {
+    } else {
 
-    circleX.push(10)
-    circleY.push(mouseY)
-    direction.push(1)
-
+        circleX.push(RADI)
+        circleY.push(mouseY)
+        direction.push(1)
+    }
 
 }
