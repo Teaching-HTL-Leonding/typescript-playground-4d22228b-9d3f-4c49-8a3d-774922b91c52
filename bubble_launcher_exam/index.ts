@@ -22,14 +22,13 @@ function draw() {
 
     circle(RADI, mouseY, DIAM)
     for (let i = 0; i < circleX.length; i++) {
-        push()
+    
         circle(circleX[i], circleY[i], DIAM)
         circleX[i] += SPEED * direction[i];
         if (circleX[i] - RADI < 0 || circleX[i] + RADI > width) {
             direction[i] *= -1;
             circleX[i] = max(RADI, min(width - RADI, circleX[i]));
         }
-        pop()
     }
 }
 
@@ -39,7 +38,7 @@ function mouseClicked() {
 
         circleX.push(RADI)
         circleY.push(mouseY)
-        direction.push(1)
+        direction.push(2)
     }
 
 }
