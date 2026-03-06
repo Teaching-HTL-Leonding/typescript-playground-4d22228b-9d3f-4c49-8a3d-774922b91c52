@@ -20,16 +20,21 @@ const COLOR_FILLED = "steelblue";
 // The random number to visualize (0–500)
 let randomNumber: number;
 
-function drawstriche(color : boolean) : void{
+function drawCircle(color: boolean): void {
+    push();
+    strokeWeight(2);
     fill(color ? "blue" : "white")
-    line(0, 0, GROUP_H, GROUP_W)
-
+    line(0, 0, 0, GROUP_H)
+    line(10, 0, 10, GROUP_H)
+    line(20, 0, 20, GROUP_H)
+    line(30, 0, 30, GROUP_H)
+    line(0, 22, 35, 8)
+    pop();
 }
 
-function isColored(row: number, col: number, n: number): boolean {
-    return row * GROUPS_PER_ROW + col < n;
+function isColored(row: number, groups: number, n: number): boolean {
+    return row * ROWS + groups < n;
 }
-
 
 function setup(): void {
     const canvasW = GROUPS_PER_ROW * CELL_W + 2 * MARGIN;
@@ -40,5 +45,13 @@ function setup(): void {
 
     background("white");
 
-
+        for (let row = 0; row < ROWS; row++) {
+        push();
+        for (let groups = 0; groups < GROUPS_PER_ROW; groups++) {
+            drawCircle(isColored(row, groups, randomNumber));
+            translate(CELL_W, 0);
+        }
+        pop();
+        translate(0, CELL_H);
+}
 }
