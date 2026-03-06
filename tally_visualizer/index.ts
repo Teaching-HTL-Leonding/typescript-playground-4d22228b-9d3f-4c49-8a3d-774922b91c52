@@ -23,23 +23,27 @@ let randomNumber: number;
 function drawCircle(color: number): void {
     push();
     strokeWeight(2);
-    if(color === 1){
-    line(0, 0, 0, GROUP_H)
-    stroke("blue")
-    }else if(color === 2){
-    line(10, 0, 10, GROUP_H)
-    stroke("blue")
+    if (color >= 1) {
+        stroke("blue")
+        line(0, 0, 0, GROUP_H)
+
+    } if (color >= 2) {
+        stroke("blue")
+        line(10, 0, 10, GROUP_H)
+
     }
-    else if(color === 2){
-    line(20, 0, 20, GROUP_H)
-    stroke("blue")
-    }else if(color === 3){
-     line(30, 0, 30, GROUP_H)
-     stroke("blue")   
+    if (color >= 3) {
+        stroke("blue")
+        line(20, 0, 20, GROUP_H)
+    } if (color >= 4) {
+        stroke("blue")
+        line(30, 0, 30, GROUP_H)
     }
-    else if(color === 4){
-    line(0, 26, 35, 8)
-    stroke("blue")}
+    if (color >= 5) {
+        stroke("blue")
+        line(0, 26, 35, 8)
+    }
+
     pop();
 }
 
@@ -54,7 +58,7 @@ function setup(): void {
     const canvasH = ROWS * CELL_H + TITLE_HEIGHT + MARGIN;
     createCanvas(canvasW, canvasH);
 
-    randomNumber = Math.floor(Math.random() * (501));
+    randomNumber = Math.floor(Math.random() * (6));
 
     noStroke()
     fill("black")
@@ -63,12 +67,12 @@ function setup(): void {
     text(`Random number: ${randomNumber} / 500`, width / 2, TITLE_HEIGHT);
 
 
+    drawCircle(randomNumber);
 
     translate(MARGIN, TITLE_HEIGHT + TITLE_HEIGHT)
     for (let row = 0; row < ROWS; row++) {
         push();
         for (let groups = 0; groups < GROUPS_PER_ROW; groups++) {
-            drawCircle(isColored(row, groups, randomNumber));
             translate(CELL_W, 0);
         }
         pop();
