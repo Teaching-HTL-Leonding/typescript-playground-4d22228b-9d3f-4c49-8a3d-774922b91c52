@@ -20,20 +20,31 @@ const COLOR_FILLED = "steelblue";
 // The random number to visualize (0–500)
 let randomNumber: number;
 
-function drawCircle(color: boolean): void {
+function drawCircle(color: number): void {
     push();
     strokeWeight(2);
-    stroke(color ? "blue" : "white")
+    if(color === 1){
     line(0, 0, 0, GROUP_H)
+    stroke("blue")
+    }else if(color === 2){
     line(10, 0, 10, GROUP_H)
+    stroke("blue")
+    }
+    else if(color === 2){
     line(20, 0, 20, GROUP_H)
-    line(30, 0, 30, GROUP_H)
+    stroke("blue")
+    }else if(color === 3){
+     line(30, 0, 30, GROUP_H)
+     stroke("blue")   
+    }
+    else if(color === 4){
     line(0, 26, 35, 8)
+    stroke("blue")}
     pop();
 }
 
 function isColored(row: number, groups: number, n: number): boolean {
-    return row * ROWS + groups < n;
+    return row * MARKS_PER_GROUP + groups < n;
 }
 
 function setup(): void {
@@ -52,9 +63,9 @@ function setup(): void {
     text(`Random number: ${randomNumber} / 500`, width / 2, TITLE_HEIGHT);
 
 
-    
-        translate(MARGIN, TITLE_HEIGHT + TITLE_HEIGHT)
-        for (let row = 0; row < ROWS; row++) {
+
+    translate(MARGIN, TITLE_HEIGHT + TITLE_HEIGHT)
+    for (let row = 0; row < ROWS; row++) {
         push();
         for (let groups = 0; groups < GROUPS_PER_ROW; groups++) {
             drawCircle(isColored(row, groups, randomNumber));
@@ -62,5 +73,5 @@ function setup(): void {
         }
         pop();
         translate(0, CELL_H);
-}
+    }
 }
