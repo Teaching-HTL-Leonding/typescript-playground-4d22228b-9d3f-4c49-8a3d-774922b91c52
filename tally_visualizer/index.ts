@@ -22,6 +22,7 @@ let randomNumber: number;
 
 function drawCircle(color: number): void {
     push();
+    translate(CELL_W, CELL_H);
     strokeWeight(2);
     if (color >= 1) {
         stroke("blue")
@@ -74,6 +75,9 @@ function setup(): void {
         push();
         for (let groups = 0; groups < GROUPS_PER_ROW; groups++) {
             translate(CELL_W, 0);
+
+                strokeWeight(2);
+
         }
         pop();
         translate(0, CELL_H);
