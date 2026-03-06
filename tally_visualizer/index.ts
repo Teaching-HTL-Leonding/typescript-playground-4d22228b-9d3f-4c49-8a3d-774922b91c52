@@ -28,7 +28,7 @@ function drawCircle(color: boolean): void {
     line(10, 0, 10, GROUP_H)
     line(20, 0, 20, GROUP_H)
     line(30, 0, 30, GROUP_H)
-    line(0, 22, 35, 8)
+    line(0, 26, 35, 8)
     pop();
 }
 
@@ -43,8 +43,16 @@ function setup(): void {
 
     randomNumber = Math.floor(Math.random() * (501));
 
-    background("white");
 
+    noStroke();
+    fill("black");
+    textSize(14);
+    textAlign(CENTER);
+    text(`Random number: ${randomNumber} / 500`, width / 2, TITLE_HEIGHT);
+
+
+    background("white");
+        translate(MARGIN, TITLE_HEIGHT + TITLE_HEIGHT)
         for (let row = 0; row < ROWS; row++) {
         push();
         for (let groups = 0; groups < GROUPS_PER_ROW; groups++) {
