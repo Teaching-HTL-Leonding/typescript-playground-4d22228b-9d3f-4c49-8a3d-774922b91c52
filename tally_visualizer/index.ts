@@ -23,7 +23,7 @@ let randomNumber: number;
 function drawCircle(color: boolean): void {
     push();
     strokeWeight(2);
-    fill(color ? "blue" : "white")
+    stroke(color ? "blue" : "white")
     line(0, 0, 0, GROUP_H)
     line(10, 0, 10, GROUP_H)
     line(20, 0, 20, GROUP_H)
@@ -37,21 +37,22 @@ function isColored(row: number, groups: number, n: number): boolean {
 }
 
 function setup(): void {
+
+    background("white");
     const canvasW = GROUPS_PER_ROW * CELL_W + 2 * MARGIN;
     const canvasH = ROWS * CELL_H + TITLE_HEIGHT + MARGIN;
     createCanvas(canvasW, canvasH);
 
     randomNumber = Math.floor(Math.random() * (501));
 
-
-    noStroke();
-    fill("black");
+    noStroke()
+    fill("black")
     textSize(14);
     textAlign(CENTER);
     text(`Random number: ${randomNumber} / 500`, width / 2, TITLE_HEIGHT);
 
 
-    background("white");
+    
         translate(MARGIN, TITLE_HEIGHT + TITLE_HEIGHT)
         for (let row = 0; row < ROWS; row++) {
         push();
