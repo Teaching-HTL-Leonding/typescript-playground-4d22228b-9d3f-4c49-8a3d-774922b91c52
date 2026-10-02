@@ -4,15 +4,12 @@ const SCALE = 5;
 
 // Margin around the field (i.e. distance from edge to the field)
 const MARGIN = 4;
-const SOCCERFIELDWIDTH = 70
-const SOCCERFIELDLENGTH = 100
 
 function setup() {
-
     // We must calculate the size of the canvas using the constants.
     // Note that we assume that the soccer field has a width of 100m
     // and a height of 70m.
-    createCanvas((SOCCERFIELDLENGTH + MARGIN * 2) * SCALE, (SOCCERFIELDWIDTH + MARGIN * 2) * SCALE);
+    createCanvas((100 + MARGIN * 2) * SCALE, (70 + MARGIN * 2) * SCALE);
     background("green");
 
     strokeWeight(0.5);
@@ -21,6 +18,9 @@ function setup() {
     angleMode(DEGREES);
 
     push();
+
+    let width = 100
+    let height = 70
 
     // Note that we scale everything by the constant SCALE. We use the size values
     // in meters as if they were pixels, and then scale them up by the SCALE factor.
@@ -33,30 +33,37 @@ function setup() {
     translate(MARGIN, MARGIN);
 
     // TODO: Draw the soccer field as close as possible to a real soccer field.
-    // <<< ADD YOUR CODE HERE 
+    // <<< ADD YOUR CODE HERE
 
-    const MIDDLELINE = SOCCERFIELDWIDTH / 2
-    
-    rect(0, 0, SOCCERFIELDLENGTH, SOCCERFIELDWIDTH)
-    const STRAFRAUM = 5.5 * 2 + 7.32 + 22
+    rect(0, 0, width, height)
 
-    const LENGHTGOALAREA = 5.5 * 2 + 7.32
-    const WIDTHGOAL = 5.5
-    rect(0, MIDDLELINE-LENGHTGOALAREA/2, WIDTHGOAL, LENGHTGOALAREA)
-    rect(-2, 31.5, 2, 7.32 )
-    rect(100, MIDDLELINE-LENGHTGOALAREA/2, -WIDTHGOAL, LENGHTGOALAREA)
-    rect(102, 31.5, -2, 7.32 )
-    line(50, 0, 50, 70)
-    circle(50, 35, 18.3)
-    circle( 50, 35, 0.7)
-    rect(0, MIDDLELINE-11-LENGHTGOALAREA/2, 16.5, STRAFRAUM)
-    rect(100, MIDDLELINE-11-LENGHTGOALAREA/2, -16.5, STRAFRAUM )
-    arc(14.5, 35, 10, 15, -70, 70)
-    arc(85.5, 35.5, 10, 15, 110, -110)
-    circle(11, 35, 0.5)
-    circle(89, 35, 0.5)
-    arc(0, 0, 3, 3, 0, 90)
-    arc(0, 70, 3, 3, -90, 0)
-    arc(100, 70, 3, 3, -180, -90)
-    arc(100, 0, 3, 3, 90, -180)
+    line(width / 2, 0, width / 2, height)
+
+    circle(width / 2, height / 2, 9.15 * 2)
+    circle(width / 2, height / 2, 1)
+    circle(width - 11, height / 2, 0.5)
+    circle(11, height / 2, 0.5)
+
+    circle(width - 11, height / 2, 9.15 * 2)
+    circle(11, height / 2, 9.15 * 2)
+
+    arc(0, 0, 2, 2, 0, 90);
+    arc(0, 70, 2, 2, 270, 360);
+    arc(100, 0, 2, 2, 90, 180);
+    arc(100, 70, 2, 2, 180, 270);
+
+
+    fill("green")
+
+    rect(0, 35 - 40.32 / 2, 16.5, 40.32);
+    rect(width - 16.5, 35 - 40.32 / 2, 16.5, 40.32);
+
+    rect(0, 46 - 40.32 / 2, 5.5, 11 + 7.32);
+    rect(width - 5.5, 46 - 40.32 / 2, 5.5, 11 + 7.32);
+
+    circle(width - 11, height / 2, 0.5)
+    circle(11, height / 2, 0.5)
+
+    rect(-3, 35 - 7.32 / 2, 3, 7.32)
+    rect(width + 3, 35 - 7.32 / 2, -3, 7.32)
 }
