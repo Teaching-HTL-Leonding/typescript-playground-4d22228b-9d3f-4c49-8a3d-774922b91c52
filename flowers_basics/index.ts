@@ -1,37 +1,39 @@
-const BLUMESCHWERDURCHMESSER = 70
-const KREISX = 300
+// <<< ADD CONSTANTS HERE (if you need them)
 
 function setup() {
-  createCanvas(1000, 1000)
-  background("skyblue")
+  // <<< ADD YOUR CODE HERE
+  createCanvas(500, 500)
+  background("white")
+  stroke("green")
+  strokeWeight(20)
+  arc(100, 300, 200, 200, 250, 340)
+  noStroke()
+  fill("lightgreen")
+  circle(140 + 50, 210, 70)
+  circle(140 + 15.5, 210 + 47.5, 70)
+  circle(140 + 15.5, 210 - 47.5, 70)
+  circle(140 - 44, 210 - 31.9, 70)
+  circle(140 - 44, 210 + 31.9, 70)
+
+
+  stroke("yellow")
+  fill("yellow")
+  strokeWeight(2)
+  circle(140, 210, 65)
 
   stroke("green")
   noFill()
   strokeWeight(20)
-  arc(160, 450, 500, 600, -70, 120)
-
-  noFill()
-  strokeWeight(20)
-  arc(560, 450, 500, 600, -70, 120)
-
+  arc(350, 300, 200, 200, 250, 340)
+  stroke("yellow")
+  strokeWeight(2)
   fill("lightgreen")
-  strokeWeight(1)
-  circle(750, 200, 80)
-  circle(700, 250, 80)
-  circle(650, 200, 80)
-  circle(700, 150, 80)
-
-  fill("yellow")
+  stroke("green")
+  circle(410, 200, 80)
+  circle(360, 250, 80)
+  circle(310, 200, 80)
+  circle(360, 150, 80)
   noStroke()
-  circle(700, 200, 65)
-
-  fill("lightgreen")
-  circle(KREISX + 15.5, 200 - 47.5, BLUMESCHWERDURCHMESSER)
-  circle(350, 200, BLUMESCHWERDURCHMESSER)
-  circle(KREISX + 15.5, 247.5, BLUMESCHWERDURCHMESSER)
-  circle(KREISX - 44, 200 - 31.9, BLUMESCHWERDURCHMESSER)
-  circle(KREISX - 44, 200 + 31.9, BLUMESCHWERDURCHMESSER)
-
   fill("yellow")
-  circle(300, 200, 65)
+  circle(360, 200, 65)
 }
