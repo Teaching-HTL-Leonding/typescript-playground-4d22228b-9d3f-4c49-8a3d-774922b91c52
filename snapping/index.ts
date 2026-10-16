@@ -1,26 +1,25 @@
 function setup() {
-  createCanvas(500, 400);
+  createCanvas(200, 200);
   background("lightblue");
 }
 
 function mouseMoved() {
-  const SNAP = 40; // marker must snap every 40 pixels
-  const MARKERSIZE = 10; // size of marker
+  const snap: number = 40; // marker must snap every 40 pixels
+  const markerSize: number = 10; // size of marker
 
   background("lightblue");
 
-  const x = round(mouseX / SNAP) * SNAP
-  const y = round(mouseY / SNAP) * SNAP
-
-  line(x - MARKERSIZE, y x + MARKERSIZE, y)
-  line(x, y - MARKERSIZE, x y + MARKERSIZE)
-
-  noFill()
-  fill("black")
-  textSize(10)
-  textAlign(RIGHT)
-  text(`x=${x}, y=${y}`,width-5 , height-5)
-
-
+  // Tip: text("Hello", 10, 20) draws text at 10/20.
+  // Backticks and ${...} insert values into text, e.g. `${x}/${y}`.
   // Add your code here
+
+  const x: number = round(mouseX / snap) * snap;
+  const y: number = round(mouseY / snap) * snap
+
+  stroke("white")
+  line(x - markerSize, y, x + markerSize, y)
+  line(x, y - markerSize, x, y + markerSize);
+  noStroke();
+  text(`${x}, ${y}`, 15, height - 10);
+
 }
