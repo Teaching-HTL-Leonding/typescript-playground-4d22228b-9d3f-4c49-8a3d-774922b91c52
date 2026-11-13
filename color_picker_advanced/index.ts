@@ -19,9 +19,7 @@ function mouseClicked() {
     rect(0, 100, 360, 100)
 
     fill("black")
-    strokeWeight(1)
-    stroke("black")
-    text(`H: ${round(mouseX)}, S: ${round(mouseY)}, B: 100`, 5, 195)
+    text(`H: ${round(min(360, mouseX))}, S: ${round(min(100, mouseY))}, B: 100`, 5, 195)
 
 
 }
